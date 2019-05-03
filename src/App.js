@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react';
 import GlobalStyle from './styles/global';
 
-import Main from './pages/Home';
+import Main from './pages/Home/Home';
 
 const App = () => (
   <Fragment>
