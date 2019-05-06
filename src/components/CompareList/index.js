@@ -30,7 +30,7 @@ const CompareList = ({ repositories }) => (
             <small>stars</small>
           </li>
           <li>
-            {repository.pushed_at}
+            {repository.last_commit}
             {' '}
             <small>last commit</small>
           </li>

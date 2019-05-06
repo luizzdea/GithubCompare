@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import moment from 'moment';
 
 import HomeServices from './homeServices';
 
@@ -20,11 +21,13 @@ export default class Main extends Component {
     const { repositoryInput, repositories } = this.state;
 
     try {
-      const response = await HomeServices.addRepository(repositoryInput);
+      const { data: repository } = await HomeServices.addRepository(repositoryInput);
+
+      repository.last_commit = moment(repository.pushed_at).fromNow();
 
       this.setState({
         repositoryInput: '',
-        repositories: [...repositories, response.data],
+        repositories: [...repositories, repository],
       });
     } catch (error) {
       console.log(error);
