@@ -18,10 +18,11 @@ export const Form = styled.form`
     height: 55px;
     padding: 0 20px;
     background-color: #fff;
-    border: 0;
     font-size: 18px;
     color: #444;
     border-radius: 3px;
+    border: ${props => (props.withError === true ? '2px solid #F00' : '0')};
+    /* styled components allows the const to use the element's properties */
   }
 
   button {
